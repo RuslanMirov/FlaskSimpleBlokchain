@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <title></title>
+  </head>
+  <body>
+
+    <!--Главная страница-->
+    <div class="container">
+<div class ="row">
+  <div class="col-6 mx-auto mt-5">
+{% block content %}
+{% endblock %}
+  </div>
+
+</div>
+    </div>
+
+<!--Кнопка проверки целлостности-->
+    <div class="container">
+<div class ="row">
+  <div class="col-6 mx-auto mt-5 text-center">
+
+    <form action="{{ url_for('check') }}" method="GET">
+      <button type="submit" class="btn btn-info">Check</button>
+    </form>
+
+<!--Вывод информации о цеелостности-->
+    <div class="container">
+<div class ="row">
+  <div class="col-6 mx-auto mt-5">
+
+    <form action="{{ url_for('check') }}">
+      {% block checking %}
+
+
+      {% endblock %}
+    </form>
+
+
+  </div>
+
+</div>
+    </div>
+
+
+  </body>
+</html>
